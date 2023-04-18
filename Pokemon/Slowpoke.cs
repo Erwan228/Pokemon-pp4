@@ -1,38 +1,38 @@
 ﻿namespace Pokemon
 {
-    internal class Lucario : IPokemon
+    internal class Slowpoke : IPokemon
     {
         public string Name { get; set; }
         public int Health { get; set; }
         private Random _random;
 
-        public Lucario()
+        public Slowpoke()
         {
-            Name = "Lucario";
-            Health = 250;
+            Name = "Slowpoke";
+            Health = 150;
             _random = new Random();
+
         }
-        public static void auraSphere(IPokemon pokemon)
+        public static void waterGun(IPokemon pokemon)
         {
-            Console.WriteLine("Lucario used Aura Sphere!");
-            pokemon.LooseHealth(30);
+            Console.WriteLine("Slowpoke used Water Gun!");
+            pokemon.LooseHealth(20);
         }
-        public static void boneRush(IPokemon pokemon)
+        public static void zenHeadbutt(IPokemon pokemon)
         {
-            Console.WriteLine("Lucario used Bone Rush!");
-            pokemon.LooseHealth(35);
+            Console.WriteLine("Slowpoke used Zen Headbutt!");
+            pokemon.LooseHealth(40);
         }
-        public static void forcePalm(IPokemon pokemon)
+        public static void psychic(IPokemon pokemon)
         {
-            Console.WriteLine("Lucario used Force Palm!");
+            Console.WriteLine("Slowpoke used Psychic!");
             pokemon.LooseHealth(45);
         }
-        public static void extremeSpeed(IPokemon pokemon)
+        public static void surf(IPokemon pokemon)
         {
-            Console.WriteLine("Lucario used Extreme Speed!");
-            pokemon.LooseHealth(50);
+            Console.WriteLine("Slowpoke used Surf!");
+            pokemon.LooseHealth(45);
         }
-
         public void Attack(IPokemon pokemon)
         {
             var move = _random.Next(4);
@@ -40,16 +40,16 @@
             switch (move)
             {
                 case 0:
-                    auraSphere(pokemon);
+                    waterGun(pokemon);
                     break;
                 case 1:
-                    boneRush(pokemon);
+                    zenHeadbutt(pokemon);
                     break;
                 case 2:
-                    forcePalm(pokemon);
+                    psychic(pokemon);
                     break;
                 case 3:
-                    extremeSpeed(pokemon);
+                    surf(pokemon);
                     break;
                 default:
                     break;

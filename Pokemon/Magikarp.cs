@@ -25,7 +25,8 @@
 
         public void LooseHealth(int strength)
         {
-            Health -= strength;
+            if (Health - strength <= 0) Health = 0;
+            else Health -= strength;
         }
     }
 }
